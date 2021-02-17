@@ -288,8 +288,68 @@ return playAgain;
 
 //=================THE END OF THE GAME=========================
 
-
+//the game wouldn't work if line below is commented!
 
 // for(; theGame() != false;){}
 
 
+//=============================================================
+
+
+
+
+//------------USER INTERACTION---------------------------------
+
+let tutbut = document.getElementById("readTutorialButton");
+let tut = document.getElementById("tutorial");
+
+
+// x.onclick = function(){
+// 	if ((tut.style.visibility != 'hidden') == true) {
+// 		tut.style.visibility = 'hidden'
+// 	} else {
+// 	// alert(tut.style.visibility);
+// 	// alert(tut.visibility);
+// 	tut.style.visibility = 'visible'; 
+// 	}
+// };
+
+tutbut.onclick = function(){
+	if (tut.className == "hide"){
+		// alert(tut.className);
+	tut.style.visibility = "visible";
+	tut.removeAttribute("class");
+	tut.setAttribute("class", "show");
+	} else {
+				// alert(tut.className);
+		tut.removeAttribute("class");
+		tut.setAttribute("class", "hide");
+		setTimeout(() => tut.style.visibility = "hidden", 1000);
+	}
+};
+
+
+let startbut = document.getElementById("startButton");
+let field = document.getElementById("field");
+
+startbut.onclick = function(){
+	if (field.className == "hide"){
+		field.style.visibility = "visible";
+		field.removeAttribute("class");
+		field.setAttribute("class", "show");
+	} else {
+		field.removeAttribute("class");
+		field.setAttribute("class", "hide");
+		setTimeout(() => field.style.visibility = "hidden", 1000);
+	}
+}
+
+
+
+	// if ((tut.style.visibility != 'hidden') == true) {
+	// 	tut.style.visibility = 'hidden'
+	// } else {
+	// // alert(tut.style.visibility);
+	// // alert(tut.visibility);
+	// tut.style.visibility = 'visible'; 
+	// }

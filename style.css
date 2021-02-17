@@ -1,3 +1,14 @@
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+/* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+  cursor: pointer;
+}
+
 html{
 	font-size: 10vh;
 }
@@ -18,28 +29,156 @@ body {
 }
 
 #tutorial {
+	visibility: hidden;
+	/*display: none;*/
+}
+
+.hide {
+	opacity: 0;
+	transition: opacity 0.8s ease-in;
+}
+
+.show {
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+}
+
+
+
+#readTutorialButton {
+	font-family: 'Quicksand', sans-serif;
+	min-width: 3rem;
+	max-width: 3rem;
+	width: 3rem;
+	min-height: 0.5rem;
+	max-height: 0.5rem
+	height: 0.5rem;
+	border-radius: 0.1rem;
+	font-size: 100%;
+	border: 0.025rem;
+	background: #e9ecee;
+	transition: all 0.3s ease-in;
+	outline: none;
+}
+
+#readTutorialButton:hover {
+	font-family: 'Quicksand', sans-serif;
+	min-width: 3rem;
+	max-width: 3rem;
+	width: 3rem;
+	min-height: 0.5rem;
+	max-height: 0.5rem
+	height: 0.5rem;
+	border-radius: 0.1rem;
+	font-size: 100%;
+	border: 0.025rem;
+	background: #d5d8dc;
+	transform: scale(0.95);
+}
+
+#readTutorialButton:active {
+	font-family: 'Quicksand', sans-serif;
+	min-width: 3rem;
+	max-width: 3rem;
+	width: 3rem;
+	min-height: 0.5rem;
+	max-height: 0.5rem
+	height: 0.5rem;
+	border-radius: 0.1rem;
+	font-size: 90%;
+	border: 0.025rem;
+	background: #abb2b9;
+	transform: scale(0.95);
+}
+
+
+
+#tutorial {
 	font-size: 0.2rem;
 }
 
+#buttonSection {
+	/*height: 3.1rem;*/
+}
+
+#startButton {
+	margin: 0.5rem;
+}
+
+#startButton {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	width: 3rem;
+	height: 1rem;
+	font-size: 0.5rem;
+	/*border: 0.025rem;*/
+	border-radius: 0.1rem;
+	/*margin: 0.2rem;*/
+	background: #5cade2;
+	transition: all 0.3s ease-in;
+	outline: none;
+}
+
+#startButton:hover {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	width: 3rem;
+	height: 1rem;
+	font-size: 0.5rem;
+	/*border: 0.025rem;*/
+	border-radius: 0.1rem;
+	/*margin: 0.2rem;*/
+	background: #3398da;
+	transform: scale(0.95);
+}
+
+#startButton:active {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	width: 3rem;
+	height: 1rem;
+	font-size: 0.45rem;
+	/*border: 0.025rem;*/
+	border-radius: 0.1rem;
+	/*margin: 0.2rem;*/
+	background: #2f86c1;
+	transform: scale(0.95);
+}
 
 table {
 	margin: auto;
 }
 
+/*tbody {
+	vertical-align: bottom;
+}
+
+tr {
+	vertical-align: bottom;
+}*/
+
+#field {
+	visibility: hidden;
+}
+
 td {
 	/*border: 0.05rem;*/
+	/*display: inline-block;*/
 	width: 1rem;
 	background: #e9ecee;
 	border-radius: 0.1rem;
 	font-size: 1rem;
+	transition: all 0.5s ease-in;
 }
 
 td:hover {
 	/*border: 0.05rem;*/
+	/*display: inline-block;*/
 	width: 1rem;
 	background: #abb2b9;
 	border-radius: 0.1rem;
 	font-size: 1rem;
+	transform: scale(0.75);
 }
 
 td:active {
@@ -48,43 +187,11 @@ td:active {
 	background: #566573;
 	border-radius: 0.1rem;
 	font-size: 0.9rem;
+	transform: scale(0.75);
 }
 
-#startButton {
-	font-family: 'Quicksand', sans-serif;
-	text-align: center;
-	width: 3rem;
-	height: 1.5rem;
-	font-size: 0.5rem;
-	border: 0.025rem;
-	border-radius: 0.1rem;
-	margin: 1rem;
-	background: #5cade2;
-}
 
-#startButton:hover {
-	font-family: 'Quicksand', sans-serif;
-	text-align: center;
-	width: 3rem;
-	height: 1.5rem;
-	font-size: 0.5rem;
-	border: 0.025rem;
-	border-radius: 0.1rem;
-	margin: 1rem;
-	background: #3398da;
-}
 
-#startButton:active {
-	font-family: 'Quicksand', sans-serif;
-	text-align: center;
-	width: 3rem;
-	height: 1.5rem;
-	font-size: 0.475rem;
-	border: 0.025rem;
-	border-radius: 0.1rem;
-	margin: 1rem;
-	background: #2f86c1;
-}
 
 /*div {
 
