@@ -12,12 +12,18 @@
 	</header>
 		<main>
 			<section id="name" ><p>
-				<!-- <span> -->The Battleship Game v.0.1.3<!-- </span> --></p>
+				<!-- <span> -->The Battleship Game v.0.1.4<!-- </span> --></p>
 				<!-- <p id="f5">press F5 to start a new game</p> -->
 			</section>
 			<section id="objective">
 				<p>Hello<!-- , ${name} -->!  This is a Battleship. Objective of the game is to destroy the enemy ship.</p> <p> Do you want to read tutorial? </p> <!-- <p> Press OK to read Press CANCEL to skip tutorial`</p> -->
 				<button id="readTutorialButton"> Read tutorial</button>	
+			</section>
+			<section id="tutorial" class="hide">
+				<p id="tut1"><!-- `Tutorial (1/3) --> There is the simple ten-squares line instead of an original Battleship grid. Imagine a river instead of a sea ;)</p>
+				<p id="tut2"><!-- `Tutorial (2/3) --> Enemy ship has three blocks, so make three accurate shots.</p>
+				<p id="tut3"><!-- `Tutorial (3/3)  -->Remember that every input means a guess(shot). Good luck!</p>
+
 			</section>
 			<section id="buttonSection">
 <!-- 				<table id="startButton">
@@ -27,16 +33,29 @@
 						</tr>
 					</tbody>
 				</table> -->
-				<button id="startButton"><span>Start</span></button>
+				<button id="startButton">Start</button>
 			</section>
-			<section id="tutorial" class="hide">
-				<p id="tut1">`Tutorial (1/3) There is the simple ten-squares line instead of an original Battleship grid. Imagine a river instead of a sea ;)`</p>
-				<p id="tut2">`Tutorial (2/3) Enemy ship has three blocks, so make three accurate shots.`</p>
-				<p id="tut3">`Tutorial (3/3) Remember that every input means a guess(shot). Good luck!`</p>
-
+			<section id="target" class="show">
+				<table >
+					<tbody>
+						<tr>
+							<td id="tar1"> <!-- 0 --> </td>
+							<td id="tar2"> <!-- 0 --> </td>
+							<td id="tar3"> <!-- 0 --> </td>
+							<td id="tar4"> <!-- 0 --> </td>
+							<td id="tar5"> <!-- 0 --> </td>
+							<td id="tar6"> <!-- 0 --> </td>
+							<td id="tar7"> <!-- 0 --> </td>
+							<td id="tar8"> <!-- 0 --> </td>
+							<td id="tar9"> <!-- 0 --> </td>
+							<td id="tar10"> <!-- 0 --> </td>
+							
+						</tr>
+					</tbody>
+				</table>
 			</section>
 			<section id="field" class="hide">
-				<table>
+				<table >
 					<tbody>
 						<tr>
 							<td> 1 </td>

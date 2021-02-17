@@ -44,6 +44,11 @@ let partOfShip1 = position;
 let partOfShip2 = position+1;  
 let partOfShip3 = position+2;
 
+//--------------------PLAYER'S INHERIT--------------
+
+//--------------------------------------------------
+
+
 
 field[partOfShip1] = "0";
 field[partOfShip2] = "0";
@@ -320,11 +325,15 @@ tutbut.onclick = function(){
 	tut.style.visibility = "visible";
 	tut.removeAttribute("class");
 	tut.setAttribute("class", "show");
+	// setTimeout(() => tutbut.innerHTML = "Hide tutorial", 500);
+	tutbut.innerHTML = "Hide tutorial";
 	} else {
 				// alert(tut.className);
 		tut.removeAttribute("class");
 		tut.setAttribute("class", "hide");
-		setTimeout(() => tut.style.visibility = "hidden", 1000);
+		setTimeout(() => tutbut.innerHTML = "Read tutorial", 800);
+		tutbut.innerHTML = "Read tutorial";
+		// setTimeout(() => tut.style.visibility = "hidden", 1000);
 	}
 };
 
@@ -337,10 +346,12 @@ startbut.onclick = function(){
 		field.style.visibility = "visible";
 		field.removeAttribute("class");
 		field.setAttribute("class", "show");
+		startbut.innerHTML = "End game";
 	} else {
 		field.removeAttribute("class");
 		field.setAttribute("class", "hide");
-		setTimeout(() => field.style.visibility = "hidden", 1000);
+		startbut.innerHTML = "Start";
+		setTimeout(() => field.style.visibility = "hidden", 2000);
 	}
 }
 
