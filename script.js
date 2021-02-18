@@ -465,6 +465,25 @@ let guesses = 0;
 
 let hits = 0;
 
+let totalGuesses = 0;
+
+let totalHits = 0;
+
+let games = 0;
+
+let victories = 0;
+
+// (hits/guesses*100).toFixed(2);
+
+let statGuesses = document.getElementById("statGuesses"); //Guesses:
+let statHits = document.getElementById("statHits"); //Hits:
+let statAccuracy = document.getElementById("statAccuracy"); //Accuracy:
+let statTotalGuesses = document.getElementById("statTotalGuesses");  //Total guesses:
+let statTotalHits = document.getElementById("statTotalHits");  //Total hits:
+let statTotalAccuracy = document.getElementById("statTotalAccuracy");  //Total accuracy:
+let statTotalGames = document.getElementById("statTotalGames");  //Total games:
+let statTotalVictories = document.getElementById("statTotalVictories");  //Total victories:
+let statWinPercentage = document.getElementById("statWinPercentage");//Win percentage:
 
 //-------1-------
 let fiel1 = document.getElementById("fiel1");
@@ -473,16 +492,55 @@ fiel1.onclick = function() {
 	if (fielTarCheck1 == true) {
 		if (newField[1] == 0) {
 			newField[1] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel1.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+
+
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+			statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
+
 			if (hits == 3){
+			games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
+
+
+				// let mainQuest = confirm("Do you want to play again, sweetheart?");
+				// if (mainQuest == true){
+
+				// 	guesses = 0;
+				// 	hits = 0;
+
+				// 	position = getRandomIntInclusive(1, 8);
+				// 	if (position <= 0 || position >= 9){
+				// 		console.error(`Warning! Position is ${position}`);
+				// 	}
+
+					
+				// 	}
+
+
 				}							
 		}else if (newField[1] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+			statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}
@@ -496,10 +554,28 @@ fiel1.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck1 == false) {
+		if (newField[1] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[1] == "-") {
+		newField[1] = "x";	
+		
+
 		// tar1.style.background = "#cc6155"; //red
 		fiel1.style.background = "#cc6155"; //red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
+
+		}
 	}
 }
 
@@ -512,16 +588,33 @@ fiel2.onclick = function() {
 	if (fielTarCheck2 == true) {
 		if (newField[2] == 0) {
 			newField[2] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel2.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[2] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}		
@@ -536,10 +629,26 @@ fiel2.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck2 == false) {
+		if (newField[2] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[2] == "-") {
+		newField[2] = "x";
+
+
 		// tar2.style.background = "#cc6155";
 		fiel2.style.background = "#cc6155"; //red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -550,16 +659,33 @@ fiel3.onclick = function() {
 	if (fielTarCheck3 == true) {
 		if (newField[3] == 0) {
 			newField[3] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel3.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[3] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}		
@@ -575,9 +701,25 @@ fiel3.onclick = function() {
 		// 		alert("victory");
 		// 	}		
 	} else if (fielTarCheck3 == false) {
+		if (newField[3] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[3] == "-") {
+		newField[3] = "x";
+
 		// tar3.style.background = "#cc6155";
 		fiel3.style.background = "#cc6155"; //red
-		alert("shotFalse");		
+		// alert("shotFalse");
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -588,16 +730,33 @@ fiel4.onclick = function() {
 	if (fielTarCheck4 == true) {
 		if (newField[4] == 0) {
 			newField[4] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel4.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[4] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}			
@@ -614,10 +773,25 @@ fiel4.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck4 == false) {
+		if (newField[4] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[4] == "-") {
+		newField[4] = "x";
+
 		// tar4.style.background = "#cc6155";
 		fiel4.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -628,16 +802,33 @@ fiel5.onclick = function() {
 	if (fielTarCheck5 == true) {
 		if (newField[5] == 0) {
 			newField[5] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel5.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[5] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}			
@@ -654,10 +845,27 @@ fiel5.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck5 == false) {
+
+		if (newField[5] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[5] == "-") {
+		newField[5] = "x";
+
+
 		// tar5.style.background = "#cc6155";
 		fiel5.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -669,16 +877,33 @@ fiel6.onclick = function() {
 	if (fielTarCheck6 == true) {
 		if (newField[6] == 0) {
 			newField[6] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel6.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[6] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}			
@@ -695,10 +920,26 @@ fiel6.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck6 == false) {
+		if (newField[6] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[6] == "-") {
+		newField[6] = "x";
+
+
 		// tar6.style.background = "#cc6155";
 		fiel6.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -710,16 +951,33 @@ fiel7.onclick = function() {
 	if (fielTarCheck7 == true) {
 		if (newField[7] == 0) {
 			newField[7] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel7.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[7] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}			
@@ -736,10 +994,26 @@ fiel7.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck7 == false) {
+		if (newField[7] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[7] == "-") {
+		newField[7] = "x";
+
+
 		// tar7.style.background = "#cc6155";
 		fiel7.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -750,16 +1024,33 @@ fiel8.onclick = function() {
 	if (fielTarCheck8 == true) {
 		if (newField[8] == 0) {
 			newField[8] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel8.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[8] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}	
@@ -776,10 +1067,26 @@ fiel8.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck8 == false) {
+		if (newField[8] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[8] == "-") {
+		newField[8] = "x";
+
+
 		// tar8.style.background = "#cc6155";
 		fiel8.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -792,16 +1099,33 @@ fiel9.onclick = function() {
 	if (fielTarCheck9 == true) {
 		if (newField[9] == 0) {
 			newField[9] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel9.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+				statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[9] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}			
@@ -818,10 +1142,26 @@ fiel9.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck9 == false) {
+		if (newField[9] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[9] == "-") {
+		newField[9] = "x";
+
+
 		// tar9.style.background = "#cc6155";
 		fiel9.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 
@@ -833,16 +1173,33 @@ fiel10.onclick = function() {
 	if (fielTarCheck10 == true) {
 		if (newField[10] == 0) {
 			newField[10] = "S";
-			alert("hit");
+			// alert("hit");
 			fiel10.style.background = "#57d68c"; //green
-			alert("shotTrue");
+			// alert("shotTrue");
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
 			hits += 1;
+			statHits.innerHTML = "Hits: " + hits;
+			statTotalHits.innerHTML = "Total hits: " + hits;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			if (hits == 3){
+				games += 1;
+			victories += 1;	
+			statTotalGames.innerHTML = 	"Total games: " + games;			
+			statTotalVictories.innerHTML = "Total victories: " + victories;
+			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 				alert("victory");
 				}							
 		}else if (newField[10] == "S") {
 			guesses += 1;
+			statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+
 			alert("Already been");
 
 		}			
@@ -858,10 +1215,26 @@ fiel10.onclick = function() {
 		// 		alert("victory");
 		// 	}
 	} else if (fielTarCheck10 == false) {
+		if (newField[10] == "x"){
+		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
+			alert("whoops!");
+		} else if (newField[10] == "-") {
+		newField[10] = "x";
+
+
 		// tar10.style.background = "#cc6155";
 		fiel10.style.background = "#cc6155"; // red
-		alert("shotFalse");
+		// alert("shotFalse");
 		guesses += 1;
+		statGuesses.innerHTML = "Guesses: " + guesses;
+			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
+		}
 	}
 }
 // alert(hits);
@@ -936,7 +1309,8 @@ startbut.onclick = function(){
 	// }
 
 
-
+//--------------STATISTICS-----------------
+let accuracy = (hits/guesses*100).toFixed(2);
 
 
 //----==---==--
