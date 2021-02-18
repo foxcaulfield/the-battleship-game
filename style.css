@@ -383,8 +383,8 @@ body {
 	justify-content: center;
 }
 
-#statBlock1, #statBlock2, #statBlock1 {
-	width: 2rem;
+#statBlock1, #statBlock2, #statBlock3 {
+	width: 2.75rem;
 }
 
 #stats p{
