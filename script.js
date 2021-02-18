@@ -339,123 +339,327 @@ function getRandomIntInclusive(min, max) {
 }
 
 
-let position = getRandomIntInclusive(1, 8);
-if (position <= 0 || position >= 9){
+	let position = getRandomIntInclusive(1, 8);
+	if (position <= 0 || position >= 9){
 	console.error(`Warning! Position is ${position}`);
-}
+	}
 
 
-let field = ["Oh, hi Mark! ;) ", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"]; //This is what the field actually is 
+	let field = ["Oh, hi Mark! ;) ", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"]; //This is what the field actually is 
 
 	let fieldPlayer = field.slice();	// this field is what player sees in alerts
 	fieldPlayer[0] = "Field:";			// this field is what player sees in alerts
 
-let partOfShip1 = position;
-let partOfShip2 = position+1;  
-let partOfShip3 = position+2;
+	let partOfShip1 = position;
+	let partOfShip2 = position+1;  
+	let partOfShip3 = position+2;
 
-field[partOfShip1] = "0";
-field[partOfShip2] = "0";
-field[partOfShip3] = "0";
+	field[partOfShip1] = "0";
+	field[partOfShip2] = "0";
+	field[partOfShip3] = "0";
 
-console.log(`Position is ${position}, the ship is in ${partOfShip1}, ${partOfShip2} and ${partOfShip3} blocks`);
-console.log(`Field is (${field})`);
-console.log(`Player's field is (${fieldPlayer})`);
+	console.log(`Position is ${position}, the ship is in ${partOfShip1}, ${partOfShip2} and ${partOfShip3} blocks`);
+	console.log(`Field is (${field})`);
+	console.log(`Player's field is (${fieldPlayer})`);
 
+	let newField = field.slice(); // this is the new field for player interaction
+	newField[0] = "Rohan:";
 
+	let fielTarCheck1 = false;
+	let fielTarCheck2 = false;
+	let fielTarCheck3 = false;
+	let fielTarCheck4 = false;
+	let fielTarCheck5 = false;
+	let fielTarCheck6 = false;
+	let fielTarCheck7 = false;
+	let fielTarCheck8 = false;
+	let fielTarCheck9 = false;
+	let fielTarCheck10 = false;
 
+	switch (position) {
+		case 1:
+			fielTarCheck1 = true;
+			fielTarCheck2 = true;
+			fielTarCheck3 = true;
+			break;	
+		case 2:
+			fielTarCheck2 = true;
+			fielTarCheck3 = true;
+			fielTarCheck4 = true;
+			break;	
+		case 3:
+			fielTarCheck3 = true;
+			fielTarCheck4 = true;
+			fielTarCheck5 = true;
+			break;	
+		case 4:
+			fielTarCheck4 = true;
+			fielTarCheck5 = true;
+			fielTarCheck6 = true;
+			break;	
+		case 5:
+			fielTarCheck5 = true;
+			fielTarCheck6 = true;
+			fielTarCheck7 = true;
+			break;
+		case 6:
+			fielTarCheck6 = true;
+			fielTarCheck7 = true;
+			fielTarCheck8 = true;
+			break;	
+		case 7:
+			fielTarCheck7 = true;
+			fielTarCheck8 = true;
+			fielTarCheck9 = true;
+			break;	
+		case 8:
+			fielTarCheck8 = true;
+			fielTarCheck9 = true;
+			fielTarCheck10 = true;
+			break;	
+		default:
+			alert("Whoops!");
+	}
 
-
-
-
-let newField = field.slice(); // this is the new field for player interaction
-newField[0] = "Rohan:";
-
-
-let fielTarCheck1 = false;
-let fielTarCheck2 = false;
-let fielTarCheck3 = false;
-let fielTarCheck4 = false;
-let fielTarCheck5 = false;
-let fielTarCheck6 = false;
-let fielTarCheck7 = false;
-let fielTarCheck8 = false;
-let fielTarCheck9 = false;
-let fielTarCheck10 = false;
-
-switch (position) {
-	case 1:
-		fielTarCheck1 = true;
-		fielTarCheck2 = true;
-		fielTarCheck3 = true;
-		break;	
-	case 2:
-		fielTarCheck2 = true;
-		fielTarCheck3 = true;
-		fielTarCheck4 = true;
-		break;	
-	case 3:
-		fielTarCheck3 = true;
-		fielTarCheck4 = true;
-		fielTarCheck5 = true;
-		break;	
-	case 4:
-		fielTarCheck4 = true;
-		fielTarCheck5 = true;
-		fielTarCheck6 = true;
-		break;	
-	case 5:
-		fielTarCheck5 = true;
-		fielTarCheck6 = true;
-		fielTarCheck7 = true;
-		break;
-	case 6:
-		fielTarCheck6 = true;
-		fielTarCheck7 = true;
-		fielTarCheck8 = true;
-		break;	
-	case 7:
-		fielTarCheck7 = true;
-		fielTarCheck8 = true;
-		fielTarCheck9 = true;
-		break;	
-	case 8:
-		fielTarCheck8 = true;
-		fielTarCheck9 = true;
-		fielTarCheck10 = true;
-		break;	
-	default:
-		alert("Whoops!");
-
-}
-
-// alert(fielTarCheck1);
-// alert(fielTarCheck2);
-// alert(fielTarCheck3);
-// alert(fielTarCheck4);
-// alert(fielTarCheck5);
-// alert(fielTarCheck6);
-// alert(fielTarCheck7);
-// alert(fielTarCheck8);
-// alert(fielTarCheck9);
-// alert(fielTarCheck10);
+	// alert(fielTarCheck1);
+	// alert(fielTarCheck2);
+	// alert(fielTarCheck3);
+	// alert(fielTarCheck4);
+	// alert(fielTarCheck5);
+	// alert(fielTarCheck6);
+	// alert(fielTarCheck7);
+	// alert(fielTarCheck8);
+	// alert(fielTarCheck9);
+	// alert(fielTarCheck10);
 
 
-let tarWitShip1 = document.getElementById("tar" + partOfShip1);
-// tarWitShip1.innerHTML = "hey ho";
+	let tarWitShip1 = document.getElementById("tar" + partOfShip1);
+	// tarWitShip1.innerHTML = "hey ho";
 
-let tarWitShip2 = document.getElementById("tar" + partOfShip2);
-// tarWitShip2.innerHTML = "hey ho";
+	let tarWitShip2 = document.getElementById("tar" + partOfShip2);
+	// tarWitShip2.innerHTML = "hey ho";
 
-let tarWitShip3 = document.getElementById("tar" + partOfShip3);
-// tarWitShip3.innerHTML = "hey ho";
+	let tarWitShip3 = document.getElementById("tar" + partOfShip3);
+	// tarWitShip3.innerHTML = "hey ho";
 
-newField[partOfShip1] = "0";
-newField[partOfShip2] = "0";
-newField[partOfShip3] = "0";
-console.log(`newField is (${newField})`);
+	newField[partOfShip1] = "0";
+	newField[partOfShip2] = "0";
+	newField[partOfShip3] = "0";
+	console.log(`newField is (${newField})`);
+
 //------------------------------------------------------
 
+function beginningOfGame(){
+ // alert("NOfiel1 is" + document.getElementById("NOfiel1"));
+ // alert("fiel 1 is" + document.getElementById("fiel1"));
+ // alert(document.getElementById("fiel1") == null);
+	 // alert(victoryChecker);
+	
+	if (victoryChecker == false){
+		// alert("imhere");
+	 games += 1;
+	 statTotalGames.innerHTML = "Total games: " + games;
+		} else {
+			victoryChecker = false;
+		}
+
+ if(document.getElementById("NOfiel1") != null){
+	document.getElementById("NOfiel1").id = "fiel1";
+	}
+
+ // alert("NOfiel1 is" + document.getElementById("NOfiel1"));
+ // alert("fiel1 is" + document.getElementById("fiel1"));
+
+ if(document.getElementById("NOfiel2") != null){	
+	document.getElementById("NOfiel2").id = "fiel2";
+	}
+
+ if(document.getElementById("NOfiel3") != null){	
+	document.getElementById("NOfiel3").id = "fiel3";
+	}
+
+ if(document.getElementById("NOfiel4") != null){	
+	document.getElementById("NOfiel4").id = "fiel4";
+	}
+
+ if(document.getElementById("NOfiel5") != null){	
+	document.getElementById("NOfiel5").id = "fiel5";
+	}
+
+ if(document.getElementById("NOfiel6") != null){	
+	document.getElementById("NOfiel6").id = "fiel6";
+	}
+
+ if(document.getElementById("NOfiel7") != null){	
+	document.getElementById("NOfiel7").id = "fiel7";
+	}
+
+ if(document.getElementById("NOfiel8") != null){	
+	document.getElementById("NOfiel8").id = "fiel8";
+	}
+
+ if(document.getElementById("NOfiel9") != null){	
+	document.getElementById("NOfiel9").id = "fiel9";
+	}
+
+ if(document.getElementById("NOfiel10") != null){	
+	document.getElementById("NOfiel10").id = "fiel10";
+	}
+
+
+
+
+
+	setTimeout(() => fiel1.innerHTML = "1", 500);
+	setTimeout(() => fiel2.innerHTML = "2", 550);
+	setTimeout(() => fiel3.innerHTML = "3", 600);
+	setTimeout(() => fiel4.innerHTML = "4", 650);
+	setTimeout(() => fiel5.innerHTML = "5", 700);
+	setTimeout(() => fiel6.innerHTML = "6", 750);
+	setTimeout(() => fiel7.innerHTML = "7", 800);
+	setTimeout(() => fiel8.innerHTML = "8", 850);
+	setTimeout(() => fiel9.innerHTML = "9", 900);
+	setTimeout(() => fiel10.innerHTML = "10", 950);
+	guesses = 0;
+	hits = 0;
+	statGuesses.innerHTML = "Guesses: " + guesses;
+	statHits.innerHTML = "Hits: " + hits;
+	statAccuracy.innerHTML = "Accuracy: 0.00 ";	
+	setTimeout(() => document.getElementById("fiel1").style.background = "#cc6155", 500);
+	setTimeout(() => document.getElementById("fiel2").style.background = "#cc6155", 550);
+	setTimeout(() => document.getElementById("fiel3").style.background = "#cc6155", 600);
+	setTimeout(() => document.getElementById("fiel4").style.background = "#cc6155", 650);
+	setTimeout(() => document.getElementById("fiel5").style.background = "#cc6155", 700);
+	setTimeout(() => document.getElementById("fiel6").style.background = "#cc6155", 750);
+	setTimeout(() => document.getElementById("fiel7").style.background = "#cc6155", 800);
+	setTimeout(() => document.getElementById("fiel8").style.background = "#cc6155", 850);
+	setTimeout(() => document.getElementById("fiel9").style.background = "#cc6155", 900);
+	setTimeout(() => document.getElementById("fiel10").style.background = "#cc6155", 950);
+
+
+	setTimeout(() => document.getElementById("fiel1").style.background = "#e9ecee", 1000);
+	setTimeout(() => document.getElementById("fiel2").style.background = "#e9ecee", 1050);
+	setTimeout(() => document.getElementById("fiel3").style.background = "#e9ecee", 1100);
+	setTimeout(() => document.getElementById("fiel4").style.background = "#e9ecee", 1150);
+	setTimeout(() => document.getElementById("fiel5").style.background = "#e9ecee", 1200);
+	setTimeout(() => document.getElementById("fiel6").style.background = "#e9ecee", 1250);
+	setTimeout(() => document.getElementById("fiel7").style.background = "#e9ecee", 1300);
+	setTimeout(() => document.getElementById("fiel8").style.background = "#e9ecee", 1350);
+	setTimeout(() => document.getElementById("fiel9").style.background = "#e9ecee", 1400);
+	setTimeout(() => document.getElementById("fiel10").style.background = "#e9ecee", 1450);
+
+
+	//=======BELOW IS FIELD CREATING====================
+
+	let position = getRandomIntInclusive(1, 8);
+	if (position <= 0 || position >= 9){
+		console.error(`Warning! Position is ${position}`);
+	}
+
+	field = ["Oh, hi Mark! ;) ", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"]; //This is what the field actually is 
+
+	fieldPlayer = field.slice();	// this field is what player sees in alerts
+	fieldPlayer[0] = "Field:";			// this field is what player sees in alerts
+
+	partOfShip1 = position;
+	partOfShip2 = position+1;  
+	partOfShip3 = position+2;
+
+	field[partOfShip1] = "0";
+	field[partOfShip2] = "0";
+	field[partOfShip3] = "0";
+
+	console.log(`Position is ${position}, the ship is in ${partOfShip1}, ${partOfShip2} and ${partOfShip3} blocks`);
+	console.log(`Field is (${field})`);
+	console.log(`Player's field is (${fieldPlayer})`);
+
+	newField = field.slice(); // this is the new field for player interaction
+	newField[0] = "Rohan:";
+
+	fielTarCheck1 = false;
+	fielTarCheck2 = false;
+	fielTarCheck3 = false;
+	fielTarCheck4 = false;
+	fielTarCheck5 = false;
+	fielTarCheck6 = false;
+	fielTarCheck7 = false;
+	fielTarCheck8 = false;
+	fielTarCheck9 = false;
+	fielTarCheck10 = false;
+
+	switch (position) {
+		case 1:
+			fielTarCheck1 = true;
+			fielTarCheck2 = true;
+			fielTarCheck3 = true;
+			break;	
+		case 2:
+			fielTarCheck2 = true;
+			fielTarCheck3 = true;
+			fielTarCheck4 = true;
+			break;	
+		case 3:
+			fielTarCheck3 = true;
+			fielTarCheck4 = true;
+			fielTarCheck5 = true;
+			break;	
+		case 4:
+			fielTarCheck4 = true;
+			fielTarCheck5 = true;
+			fielTarCheck6 = true;
+			break;	
+		case 5:
+			fielTarCheck5 = true;
+			fielTarCheck6 = true;
+			fielTarCheck7 = true;
+			break;
+		case 6:
+			fielTarCheck6 = true;
+			fielTarCheck7 = true;
+			fielTarCheck8 = true;
+			break;	
+		case 7:
+			fielTarCheck7 = true;
+			fielTarCheck8 = true;
+			fielTarCheck9 = true;
+			break;	
+		case 8:
+			fielTarCheck8 = true;
+			fielTarCheck9 = true;
+			fielTarCheck10 = true;
+			break;	
+		default:
+			alert("Whoops!");
+		
+		}
+
+	// alert(fielTarCheck1);
+	// alert(fielTarCheck2);
+	// alert(fielTarCheck3);
+	// alert(fielTarCheck4);
+	// alert(fielTarCheck5);
+	// alert(fielTarCheck6);
+	// alert(fielTarCheck7);
+	// alert(fielTarCheck8);
+	// alert(fielTarCheck9);
+	// alert(fielTarCheck10);
+
+	tarWitShip1 = document.getElementById("tar" + partOfShip1);
+	// tarWitShip1.innerHTML = "hey ho";
+
+	tarWitShip2 = document.getElementById("tar" + partOfShip2);
+	// tarWitShip2.innerHTML = "hey ho";
+
+	tarWitShip3 = document.getElementById("tar" + partOfShip3);
+	// tarWitShip3.innerHTML = "hey ho";
+
+	newField[partOfShip1] = "0";
+	newField[partOfShip2] = "0";
+	newField[partOfShip3] = "0";
+	console.log(`newField is (${newField})`);
+
+	//=======ABOVE IS FIELD CREATING====================
+}
 
 
 
@@ -473,6 +677,10 @@ let games = 0;
 
 let victories = 0;
 
+let percentage = 0;
+
+let victoryChecker = false;
+
 // (hits/guesses*100).toFixed(2);
 
 let statGuesses = document.getElementById("statGuesses"); //Guesses:
@@ -485,765 +693,191 @@ let statTotalGames = document.getElementById("statTotalGames");  //Total games:
 let statTotalVictories = document.getElementById("statTotalVictories");  //Total victories:
 let statWinPercentage = document.getElementById("statWinPercentage");//Win percentage:
 
-//-------1-------
-let fiel1 = document.getElementById("fiel1");
-// let tar1 = document.getElementById("tar1");
-fiel1.onclick = function() {
-	if (fielTarCheck1 == true) {
-		if (newField[1] == 0) {
-			newField[1] = "S";
-			// alert("hit");
-			fiel1.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
+function blockBehaviorOnClick(fiel, fielTarCheck, newF) {
+		if (fielTarCheck == true) {
+			if (newField[newF] == 0) {
+				newField[newF] = "S";
+				// alert("hit");
+				fiel.style.background = "#57d68c"; //green
+				// alert("shotTrue");
+				guesses += 1;
+				totalGuesses += 1;
+				
+				statGuesses.innerHTML = "Guesses: " + guesses;
+				statTotalGuesses.innerHTML = "Total guesses: " + totalGuesses;
 
 
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
+				hits += 1;
+				totalHits += 1;
+				statHits.innerHTML = "Hits: " + hits;
+				statTotalHits.innerHTML = "Total hits: " + totalHits;
 
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-			statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-
-
-			if (hits == 3){
-			games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
+				statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+				statTotalAccuracy.innerHTML = "Total accuracy: " + (totalHits/totalGuesses*100).toFixed(2); 
 
 
-				// let mainQuest = confirm("Do you want to play again, sweetheart?");
-				// if (mainQuest == true){
-
-				// 	guesses = 0;
-				// 	hits = 0;
-
-				// 	position = getRandomIntInclusive(1, 8);
-				// 	if (position <= 0 || position >= 9){
-				// 		console.error(`Warning! Position is ${position}`);
-				// 	}
-
-					
-				// 	}
+					if (hits == 3){
+						victoryChecker = true;
+						games += 1;
+						victories += 1;	
+						statTotalGames.innerHTML = 	"Total games: " + games;			
+						statTotalVictories.innerHTML = "Total victories: " + victories;
+						statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
 
 
-				}							
-		}else if (newField[1] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-			statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+						// alert("victory");
 
-			alert("Already been");
 
+					// setTimeout(() => tutbut.innerHTML = "Hide tutorial", 500);
+						// setTimeout(() => fiel1.innerHTML = "", 500);
+						// setTimeout(() => fiel2.innerHTML = "V", 631);
+						// setTimeout(() => fiel3.innerHTML = "I", 762);
+						// setTimeout(() => fiel4.innerHTML = "C", 893);
+						// setTimeout(() => fiel5.innerHTML = "T", 1024);
+						// setTimeout(() => fiel6.innerHTML = "O", 1155);
+						// setTimeout(() => fiel7.innerHTML = "R", 1286);
+						// setTimeout(() => fiel8.innerHTML = "Y", 1417);
+						// setTimeout(() => fiel9.innerHTML = "!", 1548);
+						// setTimeout(() => fiel10.innerHTML = "", 1679);
+
+						setTimeout(() => fiel1.innerHTML = "", 500);
+						setTimeout(() => fiel2.innerHTML = "V", 600);
+						setTimeout(() => fiel3.innerHTML = "I", 700);
+						setTimeout(() => fiel4.innerHTML = "C", 800);
+						setTimeout(() => fiel5.innerHTML = "T", 900);
+						setTimeout(() => fiel6.innerHTML = "O", 1000);
+						setTimeout(() => fiel7.innerHTML = "R", 1100);
+						setTimeout(() => fiel8.innerHTML = "Y", 1200);
+						setTimeout(() => fiel9.innerHTML = "!", 1300);
+						setTimeout(() => fiel10.innerHTML = "", 1400);
+
+						setTimeout(() => document.getElementById("fiel1").style.background = "#57d68c", 500);
+						setTimeout(() => document.getElementById("fiel2").style.background = "#57d68c", 600);
+						setTimeout(() => document.getElementById("fiel3").style.background = "#57d68c", 700);
+						setTimeout(() => document.getElementById("fiel4").style.background = "#57d68c", 800);
+						setTimeout(() => document.getElementById("fiel5").style.background = "#57d68c", 900);
+						setTimeout(() => document.getElementById("fiel6").style.background = "#57d68c", 1000);
+						setTimeout(() => document.getElementById("fiel7").style.background = "#57d68c", 1100);
+						setTimeout(() => document.getElementById("fiel8").style.background = "#57d68c", 1200);
+						setTimeout(() => document.getElementById("fiel9").style.background = "#57d68c", 1300);
+						setTimeout(() => document.getElementById("fiel10").style.background = "#57d68c", 1400);
+
+						setTimeout(() => document.getElementById("fiel1").style.background = "#e9ecee", 1500);
+						setTimeout(() => document.getElementById("fiel2").style.background = "#e9ecee", 1600);
+						setTimeout(() => document.getElementById("fiel3").style.background = "#e9ecee", 1700);
+						setTimeout(() => document.getElementById("fiel4").style.background = "#e9ecee", 1800);
+						setTimeout(() => document.getElementById("fiel5").style.background = "#e9ecee", 1900);
+						setTimeout(() => document.getElementById("fiel6").style.background = "#e9ecee", 2000);
+						setTimeout(() => document.getElementById("fiel7").style.background = "#e9ecee", 2100);
+						setTimeout(() => document.getElementById("fiel8").style.background = "#e9ecee", 2200);
+						setTimeout(() => document.getElementById("fiel9").style.background = "#e9ecee", 2300);
+						setTimeout(() => document.getElementById("fiel10").style.background = "#e9ecee", 2400);
+
+						setTimeout(() => document.getElementById("fiel1").id = "NOfiel1", 2500);
+						setTimeout(() => document.getElementById("fiel2").id = "NOfiel2", 2500);
+						setTimeout(() => document.getElementById("fiel3").id = "NOfiel3", 2500);
+						setTimeout(() => document.getElementById("fiel4").id = "NOfiel4", 2500);
+						setTimeout(() => document.getElementById("fiel5").id = "NOfiel5", 2500);
+						setTimeout(() => document.getElementById("fiel6").id = "NOfiel6", 2500);
+						setTimeout(() => document.getElementById("fiel7").id = "NOfiel7", 2500);
+						setTimeout(() => document.getElementById("fiel8").id = "NOfiel8", 2500);
+						setTimeout(() => document.getElementById("fiel9").id = "NOfiel9", 2500);
+						setTimeout(() => document.getElementById("fiel10").id = "NOfiel10", 2500);
+
+						// fiel2.removeAttribute("class");
+						// fiel2.setAttribute("class", "aft");	
+						// let mainQuest = confirm("Do you want to play again, sweetheart?");
+						// 	if (mainQuest == true){
+						// 		beginningOfGame();
+						// 				}
+								}		
+
+			} else if (newField[newF] == "S") {
+				guesses += 1;
+				totalGuesses += 1;
+				statGuesses.innerHTML = "Guesses: " + guesses;
+				statTotalGuesses.innerHTML = "Total guesses: " + totalGuesses;
+				statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+				statTotalAccuracy.innerHTML = "Total accuracy: " + (totalHits/totalGuesses*100).toFixed(2); 
+				alert("Already been");
+
+			}
+
+					// tar1.style.background = "#57d68c"; //green
+					// fiel1.style.background = "#57d68c"; //green
+					// alert("shotTrue");
+					// guesses += 1;
+					// hits += 1;
+					// 	if (hits == 3){
+					// 		alert("victory");
+					// 	}
+		} else if (fielTarCheck == false) {
+			if (newField[newF] == "x"){
+				guesses += 1;
+				totalGuesses += 1;
+				statGuesses.innerHTML = "Guesses: " + guesses;
+				statTotalGuesses.innerHTML = "Total guesses: " + totalGuesses;
+				statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+				statTotalAccuracy.innerHTML = "Total accuracy: " + (totalHits/totalGuesses*100).toFixed(2); 			
+				alert("whoops!");
+			} else if (newField[newF] == "-") {
+				newField[newF] = "x";	
+				// tar1.style.background = "#cc6155"; //red
+				fiel.style.background = "#cc6155"; //red
+				// alert("shotFalse");
+				guesses += 1;
+				totalGuesses += 1;		
+				statGuesses.innerHTML = "Guesses: " + guesses;
+				statTotalGuesses.innerHTML = "Total guesses: " + totalGuesses;
+				statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
+				statTotalAccuracy.innerHTML = "Total accuracy: " + (totalHits/totalGuesses*100).toFixed(2);  
+			}
 		}
-
-		// tar1.style.background = "#57d68c"; //green
-		// fiel1.style.background = "#57d68c"; //green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck1 == false) {
-		if (newField[1] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[1] == "-") {
-		newField[1] = "x";	
-		
-
-		// tar1.style.background = "#cc6155"; //red
-		fiel1.style.background = "#cc6155"; //red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-
-
-		}
-	}
 }
 
+//==testing==
+fiel1.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel1, fielTarCheck1, 1)
+});
 
+fiel2.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel2, fielTarCheck2, 2)
+});
 
-//-------2-------
-let fiel2 = document.getElementById("fiel2");
-// let tar2 = document.getElementById("tar2");
-fiel2.onclick = function() {
-	if (fielTarCheck2 == true) {
-		if (newField[2] == 0) {
-			newField[2] = "S";
-			// alert("hit");
-			fiel2.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+fiel3.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel3, fielTarCheck3, 3)
+});
 
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[2] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
+fiel4.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel4, fielTarCheck4, 4)
+});
 
-			alert("Already been");
+fiel5.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel5, fielTarCheck5, 5)
+});
 
-		}		
+fiel6.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel6, fielTarCheck6, 6)
+});
 
+fiel7.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel7, fielTarCheck7, 7)
+});
 
-		// tar2.style.background = "#57d68c";
-		// fiel2.style.background = "#57d68c"; //green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck2 == false) {
-		if (newField[2] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[2] == "-") {
-		newField[2] = "x";
+fiel8.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel8, fielTarCheck8, 8)
+});
 
+fiel9.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel9, fielTarCheck9, 9)
+});
 
-		// tar2.style.background = "#cc6155";
-		fiel2.style.background = "#cc6155"; //red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-		}
-	}
-}
+fiel10.addEventListener('click', function(){
+	blockBehaviorOnClick(fiel10, fielTarCheck10, 10)
+});
+//===========
 
-//-------3-------
-let fiel3 = document.getElementById("fiel3");
-// let tar3 = document.getElementById("tar3");
-fiel3.onclick = function() {
-	if (fielTarCheck3 == true) {
-		if (newField[3] == 0) {
-			newField[3] = "S";
-			// alert("hit");
-			fiel3.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
 
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[3] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}		
-
-
-
-		// // tar3.style.background = "#57d68c";
-		// fiel3.style.background = "#57d68c"; //green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}		
-	} else if (fielTarCheck3 == false) {
-		if (newField[3] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[3] == "-") {
-		newField[3] = "x";
-
-		// tar3.style.background = "#cc6155";
-		fiel3.style.background = "#cc6155"; //red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-//-------4-------
-let fiel4 = document.getElementById("fiel4");
-// let tar4 = document.getElementById("tar4");
-fiel4.onclick = function() {
-	if (fielTarCheck4 == true) {
-		if (newField[4] == 0) {
-			newField[4] = "S";
-			// alert("hit");
-			fiel4.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[4] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}			
-
-
-
-
-		// // tar4.style.background = "#57d68c";
-		// fiel4.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck4 == false) {
-		if (newField[4] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[4] == "-") {
-		newField[4] = "x";
-
-		// tar4.style.background = "#cc6155";
-		fiel4.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-//-------5-------
-let fiel5 = document.getElementById("fiel5");
-// let tar5 = document.getElementById("tar5");
-fiel5.onclick = function() {
-	if (fielTarCheck5 == true) {
-		if (newField[5] == 0) {
-			newField[5] = "S";
-			// alert("hit");
-			fiel5.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[5] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}			
-
-
-
-
-		// // tar5.style.background = "#57d68c";
-		// fiel5.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck5 == false) {
-
-		if (newField[5] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[5] == "-") {
-		newField[5] = "x";
-
-
-		// tar5.style.background = "#cc6155";
-		fiel5.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-
-//-------6-------
-let fiel6 = document.getElementById("fiel6");
-// let tar6 = document.getElementById("tar6");
-fiel6.onclick = function() {
-	if (fielTarCheck6 == true) {
-		if (newField[6] == 0) {
-			newField[6] = "S";
-			// alert("hit");
-			fiel6.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[6] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}			
-
-
-
-
-		// // tar6.style.background = "#57d68c";
-		// fiel6.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck6 == false) {
-		if (newField[6] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[6] == "-") {
-		newField[6] = "x";
-
-
-		// tar6.style.background = "#cc6155";
-		fiel6.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-
-//-------7-------
-let fiel7 = document.getElementById("fiel7");
-// let tar7 = document.getElementById("tar7");
-fiel7.onclick = function() {
-	if (fielTarCheck7 == true) {
-		if (newField[7] == 0) {
-			newField[7] = "S";
-			// alert("hit");
-			fiel7.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[7] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}			
-
-
-
-
-		// // tar7.style.background = "#57d68c";
-		// fiel7.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck7 == false) {
-		if (newField[7] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[7] == "-") {
-		newField[7] = "x";
-
-
-		// tar7.style.background = "#cc6155";
-		fiel7.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-//-------8-------
-let fiel8 = document.getElementById("fiel8");
-// let tar8 = document.getElementById("tar8");
-fiel8.onclick = function() {
-	if (fielTarCheck8 == true) {
-		if (newField[8] == 0) {
-			newField[8] = "S";
-			// alert("hit");
-			fiel8.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[8] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}	
-
-
-
-
-		// // tar8.style.background = "#57d68c";
-		// fiel8.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck8 == false) {
-		if (newField[8] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[8] == "-") {
-		newField[8] = "x";
-
-
-		// tar8.style.background = "#cc6155";
-		fiel8.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-
-
-//-------9-------
-let fiel9 = document.getElementById("fiel9");
-// let tar9 = document.getElementById("tar9");
-fiel9.onclick = function() {
-	if (fielTarCheck9 == true) {
-		if (newField[9] == 0) {
-			newField[9] = "S";
-			// alert("hit");
-			fiel9.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-				statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[9] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}			
-
-
-
-
-		// // tar9.style.background = "#57d68c";
-		// fiel9.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck9 == false) {
-		if (newField[9] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[9] == "-") {
-		newField[9] = "x";
-
-
-		// tar9.style.background = "#cc6155";
-		fiel9.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-
-
-//-------10-------
-let fiel10 = document.getElementById("fiel10");
-// let tar10 = document.getElementById("tar10");
-fiel10.onclick = function() {
-	if (fielTarCheck10 == true) {
-		if (newField[10] == 0) {
-			newField[10] = "S";
-			// alert("hit");
-			fiel10.style.background = "#57d68c"; //green
-			// alert("shotTrue");
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			hits += 1;
-			statHits.innerHTML = "Hits: " + hits;
-			statTotalHits.innerHTML = "Total hits: " + hits;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			if (hits == 3){
-				games += 1;
-			victories += 1;	
-			statTotalGames.innerHTML = 	"Total games: " + games;			
-			statTotalVictories.innerHTML = "Total victories: " + victories;
-			statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
-				alert("victory");
-				}							
-		}else if (newField[10] == "S") {
-			guesses += 1;
-			statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-
-			alert("Already been");
-
-		}			
-
-
-
-		// // tar10.style.background = "#57d68c";
-		// fiel10.style.background = "#57d68c"; // green
-		// alert("shotTrue");
-		// guesses += 1;
-		// hits += 1;
-		// 	if (hits == 3){
-		// 		alert("victory");
-		// 	}
-	} else if (fielTarCheck10 == false) {
-		if (newField[10] == "x"){
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-		statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-		statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " + (hits/guesses*100).toFixed(2); 			
-			alert("whoops!");
-		} else if (newField[10] == "-") {
-		newField[10] = "x";
-
-
-		// tar10.style.background = "#cc6155";
-		fiel10.style.background = "#cc6155"; // red
-		// alert("shotFalse");
-		guesses += 1;
-		statGuesses.innerHTML = "Guesses: " + guesses;
-			statTotalGuesses.innerHTML = "Total guesses: " + guesses;
-			statAccuracy.innerHTML = "Accuracy: " + (hits/guesses*100).toFixed(2);
-		statTotalAccuracy.innerHTML = "Total accuracy: " +(hits/guesses*100).toFixed(2); 
-		}
-	}
-}
-// alert(hits);
-// if (hits == 3) {
-// 	alert("Victory");
-// 	// break; 
-// 	}
-
-//-------------------------------------------------
 
 
 
@@ -1252,26 +886,17 @@ let tutbut = document.getElementById("readTutorialButton");
 let tut = document.getElementById("tutorial");
 
 
-// x.onclick = function(){
-// 	if ((tut.style.visibility != 'hidden') == true) {
-// 		tut.style.visibility = 'hidden'
-// 	} else {
-// 	// alert(tut.style.visibility);
-// 	// alert(tut.visibility);
-// 	tut.style.visibility = 'visible'; 
-// 	}
-// };
 
 tutbut.onclick = function(){
 	if (tut.className == "hide"){
 		// alert(tut.className);
-	tut.style.visibility = "visible";
-	tut.removeAttribute("class");
-	tut.setAttribute("class", "show");
-	// setTimeout(() => tutbut.innerHTML = "Hide tutorial", 500);
-	tutbut.innerHTML = "Hide tutorial";
+		tut.style.visibility = "visible";
+		tut.removeAttribute("class");
+		tut.setAttribute("class", "show");
+		// setTimeout(() => tutbut.innerHTML = "Hide tutorial", 500);
+		tutbut.innerHTML = "Hide tutorial";
 	} else {
-				// alert(tut.className);
+		// alert(tut.className);
 		tut.removeAttribute("class");
 		tut.setAttribute("class", "hide");
 		setTimeout(() => tutbut.innerHTML = "Read tutorial", 800);
@@ -1284,22 +909,65 @@ tutbut.onclick = function(){
 let startbut = document.getElementById("startButton");
 let fieldSection = document.getElementById("field");
 
+let statsSection = document.getElementById("stats");
+
+let startNewGame = document.getElementById("startNewGame");
+
 startbut.onclick = function(){
 	if (fieldSection.className == "hide"){
 		fieldSection.style.visibility = "visible";
 		fieldSection.removeAttribute("class");
 		fieldSection.setAttribute("class", "show");
 		startbut.innerHTML = "End game";
+		
+		statsSection.style.visibility = "visible";
+		statsSection.removeAttribute("class");
+		statsSection.setAttribute("class", "show");
+
+		// startNewGame.style.display = "block";
+		startNewGame.style.width = "3rem";
+		startNewGame.style.height = "1rem";
+		startNewGame.style.borderRadius = "0.1rem";
+		startNewGame.style.margin = "0.1rem";
+		startNewGame.style.fontSize = "0.5rem";
+		startNewGame.removeAttribute("class");
+		startNewGame.setAttribute("class", "show");
+
 	} else {
 		fieldSection.removeAttribute("class");
 		fieldSection.setAttribute("class", "hide");
 		startbut.innerHTML = "Start";
+
+		statsSection.removeAttribute("class");
+		statsSection.setAttribute("class", "hide");
+
+		// startNewGame.style.display = "none";
+		startNewGame.style.width = "";
+		startNewGame.style.height = "";
+		startNewGame.style.borderRadius = "";
+		startNewGame.style.margin = "";
+		startNewGame.style.fontSize = "";
+		startNewGame.removeAttribute("class");
+		startNewGame.setAttribute("class", "hide");		
+
 		// setTimeout(() => fieldSection.style.visibility = "hidden", 2000);
 	}
+};
+
+
+startNewGame.onclick = function() {
+	// games += 1;
+	// statTotalGames.innerHTML = 	"Total games: " + games;			
+	// statTotalVictories.innerHTML = "Total victories: " + victories;
+	percentage = (victories/games*100).toFixed(2);
+	if (percentage == NaN || percentage == "NaN") {
+		statWinPercentage.innerHTML = "Win percentage: 0.00"
+	} else {
+	statWinPercentage.innerHTML = "Win percentage: " + (victories/games*100).toFixed(2);
+	}
+	beginningOfGame();
+
 }
-
-
-
 	// if ((tut.style.visibility != 'hidden') == true) {
 	// 	tut.style.visibility = 'hidden'
 	// } else {
@@ -1310,7 +978,7 @@ startbut.onclick = function(){
 
 
 //--------------STATISTICS-----------------
-let accuracy = (hits/guesses*100).toFixed(2);
+// let accuracy = (hits/guesses*100).toFixed(2);
 
 
 //----==---==--
@@ -1318,11 +986,11 @@ let accuracy = (hits/guesses*100).toFixed(2);
 
 // }
 
-//1. show stats during the game (guesses, hits, games, victories, accuracy  during all the games until cleared)
-//2. check doubles on red fields
-//3. ask "do you want to play again" when victory
-//4. add "lives" (3 attempts of shot)
-//5. when 3 attempts is over - ask "do you want to play again"
-//6. when press "end game" game is fading out and button of confirmation appears ("i sure want to end this game" / "let's continue"). When press conirm - game is closing to a starting position
-//7. add button "clear stats" that summon the confirmation button ("clear and start new game" / "cancel") than clears stats to zero and starts new game
-//8. color scheme changing
+// 1. show stats during the game (guesses, hits, games, victories, accuracy  during all the games until cleared)
+// 2. check doubles on red fields
+// 3. ask "do you want to play again" when victory
+// 4. add "lives" (3 attempts of shot)
+// 5. when 3 attempts is over - ask "do you want to play again"
+// 6. when press "end game" game is fading out and button of confirmation appears ("i sure want to end this game" / "let's continue"). When press conirm - game is closing to a starting position
+// 7. add button "clear stats" that summon the confirmation button ("clear and start new game" / "cancel") than clears stats to zero and starts new game
+// 8. color scheme changing
