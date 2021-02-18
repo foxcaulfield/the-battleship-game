@@ -203,20 +203,20 @@ body {
 	visibility: hidden;
 	display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
 }
 
 #field table {
 	margin: auto;
-	padding:  0.1rem 0.5rem;
-	border-spacing: 0.2rem;
+	/*padding:  0.1rem 0.5rem;*/
+	/*border-spacing: 0.2rem;*/
 
 }
 
 
 #field td {
-	/*border: 0.05rem;*/
+	border: 0.05rem;
 	/*display: inline-block;*/
 	width: 1rem;
 	background: #e9ecee;
@@ -226,7 +226,7 @@ body {
 }
 
 #field td:hover {
-	/*border: 0.05rem;*/
+	border: 0.05rem;
 	/*display: inline-block;*/
 	width: 1rem;
 	background: #abb2b9;
@@ -236,7 +236,8 @@ body {
 }
 
 #field td:active {
-	/*border: 0.05rem;*/
+	border: 0.05rem;
+	/*display: inline-block;*/
 	width: 1rem;
 	background: #566573;
 	border-radius: 0.1rem;
