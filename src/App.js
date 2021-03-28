@@ -1,9 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Introduction from "./components/Introduction/Introduction";
+import Tutorial from "./components/Introduction/Tutorial/Tutorial";
+import Interface from "./components/Interface/Interface";
 
 function App() {
   return (
+    //   <div>
+    //   </div>
+    // );
     <div className="App">
+      {/* <p>The Battleship Game</p> */}
+      <Header />
+      <Introduction />
+      <Tutorial />
+      <Interface />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
