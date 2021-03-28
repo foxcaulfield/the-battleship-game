@@ -1,10 +1,11 @@
+import StartButton from "./StartButton/StartButton";
 function ControlButtons() {
   return (
     <section id="buttonSection">
-      <button id="startButton">Start</button>
-      <button id="startNewGame" class="hide">
+      <StartButton />
+      {/* <button id="startNewGame" class="hide">
         New game
-      </button>
+      </button> */}
     </section>
   );
 }

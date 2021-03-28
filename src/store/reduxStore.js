@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux";
-import viewFieldReducer from "./reducers/viewFieldReducer";
+import boardReducer from "./reducers/boardReducer";
 import controlButtonsReducer from "./reducers/controlButtonsReducer";
 
 let reducers = combineReducers({
-  viewFieldReducer,
+  boardReducer,
   controlButtonsReducer,
 });
 

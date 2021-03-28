@@ -1,11 +1,11 @@
 import ControlButtons from "./ControlButtons/ControlButtons";
-import ViewField from "./ViewField/ViewField";
 import Stats from "./Stats/Stats";
+import Board from "./Board/Board";
 
 function Interface() {
   return (
     <div>
-      <ControlButtons /> <ViewField /> <Stats />
+      <ControlButtons /> <Board /> <Stats />
     </div>
   );
 }
