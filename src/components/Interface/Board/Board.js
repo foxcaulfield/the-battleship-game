@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import FieldSquare from "./FieldSquare/FieldSquare";
-import { getGuessActionCreator } from "../../../store/reducers/boardReducer";
+import {
+  getGuessActionCreator,
+  setWinGameOverFlow,
+} from "../../../store/reducers/boardReducer";
 
 function Board(props) {
   let fieldArray = [],
@@ -11,10 +14,24 @@ function Board(props) {
 
   return (
     <section id="field" class="hide">
+      {props.boardReducer.isWin ? "win" : "not win"}
+      <br />
+      {props.boardReducer.isGameOver ? "game over" : "not gameover"}
+      <br />
+      ship position is
       {props.boardReducer.shipPosition}
+      <br />
+      Attempts left
+      {props.boardReducer.attemptsLeft}
+      <br />
       {fieldArray.map(function (i) {
         return (
           <FieldSquare
+            disabled={
+              props.boardReducer.isWin ||
+              props.boardReducer.isGameOver ||
+              !props.boardReducer.shipPosition
+            }
             key={i}
             index={i}
             buttonId={`buttonId${i}`}
@@ -37,6 +54,9 @@ let mapDispatchToProps = (dispatch) => {
   return {
     getGuess: (guess) => {
       dispatch(getGuessActionCreator(guess));
+      dispatch(setWinGameOverFlow());
+
+      // dispatch(getGuessActionCreator(guess));
     },
   };
 };
