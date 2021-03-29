@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import FieldSquare from "./FieldSquare/FieldSquare";
 import {
   getGuessActionCreator,
-  setWinGameOverFlow,
+  toggleWinGameOverFlow,
 } from "../../../store/reducers/boardReducer";
 
 function Board(props) {
@@ -18,11 +18,14 @@ function Board(props) {
       <br />
       {props.boardReducer.isGameOver ? "game over" : "not gameover"}
       <br />
-      ship position is
+      ship position is:
       {props.boardReducer.shipPosition}
       <br />
-      Attempts left
+      Attempts left:
       {props.boardReducer.attemptsLeft}
+      <br />
+      Guesses:
+      {props.boardReducer.guessesArray}
       <br />
       {fieldArray.map(function (i) {
         return (
@@ -30,7 +33,8 @@ function Board(props) {
             disabled={
               props.boardReducer.isWin ||
               props.boardReducer.isGameOver ||
-              !props.boardReducer.shipPosition
+              !props.boardReducer.shipPosition ||
+              props.boardReducer.guessesArray.some((elem) => elem === i)
             }
             key={i}
             index={i}
@@ -54,7 +58,7 @@ let mapDispatchToProps = (dispatch) => {
   return {
     getGuess: (guess) => {
       dispatch(getGuessActionCreator(guess));
-      dispatch(setWinGameOverFlow());
+      dispatch(toggleWinGameOverFlow());
 
       // dispatch(getGuessActionCreator(guess));
     },
