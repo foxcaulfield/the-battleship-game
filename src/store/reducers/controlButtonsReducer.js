@@ -16,8 +16,8 @@ function controlButtonsReducer(state = controlButtonsInitialState, action) {
   }
 }
 
-// export const initializedSuccessActionCreator = () => ({
-//     type: ACTION,
-//   });
+export const initializedSuccessActionCreator = () => ({
+  type: ACTION,
+});
 
 export default controlButtonsReducer;

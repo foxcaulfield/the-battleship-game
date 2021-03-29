@@ -7,7 +7,7 @@ const Popup = (props) => {
       <div className="box">
         {props.content}
         <button className={styles.metalButton} onClick={props.handleClose}>
-          OK
+          ok
         </button>
       </div>
     </div>

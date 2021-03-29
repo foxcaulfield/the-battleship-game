@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import FieldSquare from "./FieldSquare/FieldSquare";
 import {
   getGuessActionCreator,
   toggleWinGameOverFlow,
 } from "../../../store/reducers/boardReducer";
+import styles from "./Board.module.css";
+import Popup from "../../../utils/Popup";
 
 function Board(props) {
   let fieldArray = [],
@@ -12,22 +14,47 @@ function Board(props) {
     len = props.boardReducer.fieldLength;
   while (++i <= len) fieldArray.push(i);
 
+  //pop-up interface
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    if (props.boardReducer.isGameOver) {
+      setIsOpen(true);
+    }
+  }, [props.boardReducer.isGameOver]);
+  //pop-up interface
+
   return (
-    <section id="field" class="hide">
-      {/* {props.boardReducer.isWin ? "win" : "not win"}
-      <br />
-      {props.boardReducer.isGameOver ? "game over" : "not gameover"}
-      <br />
-      ship position is:
-      {props.boardReducer.shipPosition}
-      <br />
-      Attempts left:
-      {props.boardReducer.attemptsLeft}
-      <br />
-      Guesses:
-      {props.boardReducer.guessesArray}
-      <br /> */}
+    <section id="field" className={styles.fieldBoard}>
+      {isOpen ? (
+        <Popup
+          content={
+            props.boardReducer.isWin ? (
+              <h1>
+                CONGRATULATIONS! YOU WON!{" "}
+                <span className="emoji" role="img" aria-label="cool">
+                  😎
+                </span>
+              </h1>
+            ) : (
+              <h1>
+                OOPS, FAILED{" "}
+                <span className="emoji" role="img" aria-label="Slightly Sad">
+                  🙁
+                </span>
+              </h1>
+            )
+          }
+          handleClose={togglePopup}
+        />
+      ) : undefined}
+
       {fieldArray.map(function (i) {
+        let value = i;
         return (
           <FieldSquare
             disabled={
@@ -39,7 +66,7 @@ function Board(props) {
             key={i}
             index={i}
             buttonId={`buttonId${i}`}
-            buttonValue={i}
+            buttonValue={value}
             getGuess={props.getGuess}
           />
         );
@@ -59,8 +86,6 @@ let mapDispatchToProps = (dispatch) => {
     getGuess: (guess) => {
       dispatch(getGuessActionCreator(guess));
       dispatch(toggleWinGameOverFlow());
-
-      // dispatch(getGuessActionCreator(guess));
     },
   };
 };

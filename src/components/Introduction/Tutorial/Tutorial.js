@@ -1,6 +1,6 @@
 function Tutorial() {
   return (
-    <section id="tutorial" class="hide">
+    <section id="tutorial">
       <h1>tutorial</h1>
       <p id="tut1">
         There is the simple nine-squares grid instead of an original Battleship
