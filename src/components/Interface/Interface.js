@@ -5,7 +5,8 @@ import Board from "./Board/Board";
 function Interface() {
   return (
     <div>
-      <ControlButtons /> <Board /> <Stats />
+      <ControlButtons /> <Stats />
+      <Board />
     </div>
   );
 }

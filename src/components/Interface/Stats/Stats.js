@@ -1,7 +1,23 @@
-function Stats() {
+import { connect } from "react-redux";
+function Stats(props) {
   return (
     <section id="stats" class="hide">
-      <div id="statBlock1">
+      {props.boardReducer.isWin ? "win" : "not win"}
+      <br />
+      {props.boardReducer.isGameOver ? "game over" : "not gameover"}
+      <br />
+      ship position is:
+      {props.boardReducer.shipPosition}
+      <br />
+      <span className="emoji" role="img" aria-label="heart">
+        ❤️
+      </span>
+      {props.boardReducer.attemptsLeft}
+      <br />
+      Guesses:
+      {props.boardReducer.guessesArray}
+      <br />
+      {/* <div id="statBlock1">
         <p id="statGuesses">Guesses: 0</p>
         <p id="statHits">Hits: 0</p>
         <p id="statAccuracy">Accuracy: 0.00</p>
@@ -17,9 +33,15 @@ function Stats() {
         <p id="statTotalGames">Total games: 0</p>
         <p id="statTotalVictories">Total victories: 0</p>
         <p id="statWinPercentage">Win percentage: 0.00</p>
-      </div>
+      </div> */}
     </section>
   );
 }
 
-export default Stats;
+let mapStateToProps = (state) => {
+  return {
+    boardReducer: state.boardReducer,
+  };
+};
+
+export default connect(mapStateToProps, null)(Stats);

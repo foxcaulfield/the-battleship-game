@@ -14,7 +14,7 @@ function Board(props) {
 
   return (
     <section id="field" class="hide">
-      {props.boardReducer.isWin ? "win" : "not win"}
+      {/* {props.boardReducer.isWin ? "win" : "not win"}
       <br />
       {props.boardReducer.isGameOver ? "game over" : "not gameover"}
       <br />
@@ -26,7 +26,7 @@ function Board(props) {
       <br />
       Guesses:
       {props.boardReducer.guessesArray}
-      <br />
+      <br /> */}
       {fieldArray.map(function (i) {
         return (
           <FieldSquare
