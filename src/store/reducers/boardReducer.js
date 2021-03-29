@@ -5,10 +5,13 @@ const GET_GUESS_ACTION_TYPE_BOARD_REDUCER =
   "GET_GUESS_ACTION_TYPE_BOARD_REDUCER";
 const TOGGLE_WIN_GAME_OVER_FLOW_ACTION_TYPE_BOARD_REDUCER =
   "TOGGLE_WIN_GAME_OVER_FLOW_ACTION_TYPE_BOARD_REDUCER";
+const SET_THEME_ACTION_TYPE_BOARD_REDUCER =
+  "SET_THEME_ACTION_TYPE_BOARD_REDUCER";
 
 const boardInitialState = {
   fieldLength: 9,
   attemptsLeft: 5,
+  theme: 1,
 
   shipPosition: null,
   lastGuess: null,
@@ -40,6 +43,11 @@ function boardReducer(state = boardInitialState, action) {
         isGameOver:
           state.attemptsLeft < 1 || state.lastGuess === state.shipPosition,
       };
+    case SET_THEME_ACTION_TYPE_BOARD_REDUCER:
+      return {
+        ...state,
+        theme: ++state.theme,
+      };
     default: {
       return state;
     }
@@ -62,6 +70,12 @@ export function getGuessActionCreator(guess) {
   return {
     type: GET_GUESS_ACTION_TYPE_BOARD_REDUCER,
     lastGuess: guess,
+  };
+}
+
+export function setThemeActionCreator() {
+  return {
+    type: SET_THEME_ACTION_TYPE_BOARD_REDUCER,
   };
 }
 

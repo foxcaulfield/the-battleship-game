@@ -4,7 +4,7 @@ function ThemeButton(props) {
   return (
     <button
       className={`${styles.metal} ${styles.linear} ${styles.themeButton} `}
-      onClick={() => alert("TIME TO CHANGE")}
+      onClick={props.changeTheme}
     >
       THEME
     </button>
