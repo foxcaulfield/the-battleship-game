@@ -55,6 +55,23 @@ function Board(props) {
 
       {fieldArray.map(function (i) {
         let value = i;
+        if (props.boardReducer.guessesArray.some((elem) => elem === i)) {
+          value = (
+            <span role="img" aria-label="Cross Mark">
+              ❌
+            </span>
+          );
+        }
+        if (
+          i === props.boardReducer.shipPosition &&
+          i === props.boardReducer.lastGuess
+        ) {
+          value = (
+            <span role="img" aria-label="Check Mark">
+              ✔️
+            </span>
+          );
+        }
         return (
           <FieldSquare
             disabled={
@@ -68,6 +85,11 @@ function Board(props) {
             buttonId={`buttonId${i}`}
             buttonValue={value}
             getGuess={props.getGuess}
+            dim={
+              !props.boardReducer.shipPosition ||
+              (props.boardReducer.isGameOver &&
+                !props.boardReducer.guessesArray.some((elem) => elem === i))
+            }
           />
         );
       })}

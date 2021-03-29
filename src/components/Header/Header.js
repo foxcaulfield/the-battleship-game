@@ -1,11 +1,9 @@
-import { connect } from "react-redux";
 import styles from "./Header.module.css";
 import InfoButton from "./InfoButton/InfoButton";
 import Popup from "./../../utils/Popup";
 import React, { useState } from "react";
 import Tutorial from "../Introduction/Tutorial/Tutorial";
 import ThemeButton from "./ThemeButton/ThemeButton";
-import { setThemeActionCreator } from "../../store/reducers/boardReducer";
 
 function Header(props) {
   //pop-up interface
@@ -22,17 +20,10 @@ function Header(props) {
       <div className={styles.mainHeader}>
         <InfoButton handleClose={togglePopup} />
         <span className={styles.headerText}>The Battleship Game v.0.6.8</span>
-        <ThemeButton changeTheme={props.changeTheme} />
+        <ThemeButton changeTheme={props.toggleTheme} />
       </div>
     </>
   );
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    changeTheme: () => {
-      dispatch(setThemeActionCreator());
-    },
-  };
-};
 
-export default connect(null, mapDispatchToProps)(Header);
+export default Header;

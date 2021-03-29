@@ -1,9 +1,12 @@
 import styles from "./FieldSquare.module.css";
+import classNames from "classnames";
 
 function FieldSquare(props) {
   return (
     <button
-      className={`${styles.metal} ${styles.linear} ${styles.fieldSquare}`}
+      className={classNames(styles.metal, styles.linear, styles.fieldSquare, {
+        [styles.dim]: props.dim,
+      })}
       disabled={props.disabled}
       id={props.buttonId}
       onClick={(e) => props.getGuess(e.target.innerHTML)}

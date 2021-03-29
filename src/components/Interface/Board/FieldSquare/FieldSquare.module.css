@@ -1,11 +1,14 @@
 .fieldSquare {
   border: none;
   display: inline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.metal:disabled {
-  color: rgba(51, 51, 51, 0.056);
-}
+/* .metal:disabled {
+  color: rgba(51, 51, 51, 0.07);
+} */
 
 .metal {
   position: relative;
@@ -70,4 +73,8 @@
     /* top HL */ hsla(0, 100%, 75%, 0.8) 0 0px 3px 2px,
     /* outer SD */ hsla(0, 50%, 40%, 0.25) 0 -5px 6px 4px,
     /* outer SD */ hsla(0, 80%, 95%, 1) 0 5px 6px 4px;
+}
+
+.dim {
+  color: rgba(51, 51, 51, 0.076);
 }
