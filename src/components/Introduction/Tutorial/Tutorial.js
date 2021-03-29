@@ -1,17 +1,13 @@
 function Tutorial() {
   return (
     <section id="tutorial" class="hide">
+      <h1>tutorial</h1>
       <p id="tut1">
-        Tutorial (1/3) There is the simple ten-squares line instead of an
-        original Battleship grid. Imagine a river instead of a sea ;)
+        There is the simple nine-squares grid instead of an original Battleship
+        grid ;)
       </p>
-      <p id="tut2">
-        Tutorial (2/3) Enemy ship has three blocks, so make three accurate
-        shots.
-      </p>
-      <p id="tut3">
-        Tutorial (3/3) Remember that every push means a guess (shot). Good luck!
-      </p>
+      <p id="tut2">Enemy ship has one block, so make an accurate shots.</p>
+      <p id="tut3">You only have 5 attempts. Good luck!</p>
     </section>
   );
 }

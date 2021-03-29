@@ -1,12 +1,12 @@
 import styles from "./Header.module.css";
-import Info from "./Info/Info";
+import InfoButton from "./InfoButton/InfoButton";
 
-function Header() {
+function Header(props) {
   return (
     <>
       <div className={styles.mainHeader}>
-        <Info />
-        <span className={styles.headerText}>The Battleship Game v.0.5.0</span>
+        <InfoButton handleClose={props.handleClose} />
+        <span className={styles.headerText}>The Battleship Game v.0.6.2</span>
         {/* <button>stat</button> */}
       </div>
     </>

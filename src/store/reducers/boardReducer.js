@@ -24,14 +24,7 @@ function boardReducer(state = boardInitialState, action) {
     case SET_SHIP_POSITION_ACTION_TYPE_BOARD_REDUCER:
       return {
         ...boardInitialState,
-        // ...state,
-        // ...state,
         shipPosition: getRandomIntInclusive(1, state.fieldLength),
-        // lastGuess: boardInitialState.lastGuess,
-        // attemptsLeft: boardInitialState.attemptsLeft,
-        // isWin: boardInitialState.isWin,
-        // isGameOver: boardInitialState.isGameOver,
-        // guessesArray: boardInitialState.guessesArray,
       };
     case GET_GUESS_ACTION_TYPE_BOARD_REDUCER:
       return {
