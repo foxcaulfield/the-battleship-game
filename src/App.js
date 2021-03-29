@@ -24,6 +24,8 @@ function App() {
       ? changeTheme(themeGreen)
       : theme === themeGreen
       ? changeTheme(themeBlue)
+      : theme === themeBlue
+      ? changeTheme(darkTheme)
       : changeTheme(themeOrange);
   }
   return (

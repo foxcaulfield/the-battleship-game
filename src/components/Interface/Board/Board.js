@@ -90,6 +90,9 @@ function Board(props) {
               (props.boardReducer.isGameOver &&
                 !props.boardReducer.guessesArray.some((elem) => elem === i))
             }
+            isGameOver={
+              props.boardReducer.isGameOver || !props.boardReducer.shipPosition
+            }
           />
         );
       })}
