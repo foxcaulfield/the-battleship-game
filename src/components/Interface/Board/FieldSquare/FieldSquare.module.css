@@ -1,6 +1,6 @@
 .fieldSquare {
   border: none;
-  display: inline;
+  /* display: inline; */
   display: flex;
   align-items: center;
   justify-content: center;
