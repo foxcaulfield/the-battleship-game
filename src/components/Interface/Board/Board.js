@@ -6,7 +6,7 @@ import {
   toggleWinGameOverFlow,
 } from "../../../store/reducers/boardReducer";
 import styles from "./Board.module.css";
-import Popup from "../../../utils/Popup";
+import Popup from "../../../utils/Popup/Popup";
 
 function Board(props) {
   let fieldArray = [],
@@ -67,8 +67,8 @@ function Board(props) {
           i === props.boardReducer.lastGuess
         ) {
           value = (
-            <span role="img" aria-label="Check Mark">
-              ✔️
+            <span role="img" aria-label="ship">
+              🚢
             </span>
           );
         }
@@ -90,8 +90,10 @@ function Board(props) {
               (props.boardReducer.isGameOver &&
                 !props.boardReducer.guessesArray.some((elem) => elem === i))
             }
-            isGameOver={
-              props.boardReducer.isGameOver || !props.boardReducer.shipPosition
+            shouldBlink={
+              !props.boardReducer.isGameOver &&
+              props.boardReducer.shipPosition &&
+              !props.boardReducer.guessesArray.some((elem) => elem === i)
             }
           />
         );

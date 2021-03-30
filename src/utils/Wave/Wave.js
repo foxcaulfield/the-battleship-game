@@ -1,4 +1,3 @@
-// import './waveModule'
 import styles from "./wave.module.css";
 
 function Wave() {

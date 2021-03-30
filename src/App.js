@@ -5,7 +5,7 @@ import Introduction from "./components/Introduction/Introduction";
 import Interface from "./components/Interface/Interface";
 import { Provider } from "react-redux";
 import store from "./store/reduxStore";
-import Wave from "./utils/Wave";
+import Wave from "./utils/Wave/Wave";
 import classNames from "classnames";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/Themes/GlobalStyles";

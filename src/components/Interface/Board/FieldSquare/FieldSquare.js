@@ -11,7 +11,7 @@ function FieldSquare(props) {
         {
           [styles.dim]: props.dim,
         },
-        { [styles.isGameInProgress]: !props.isGameOver }
+        { [styles.isGameInProgress]: props.shouldBlink }
       )}
       disabled={props.disabled}
       id={props.buttonId}
