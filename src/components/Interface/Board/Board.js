@@ -42,7 +42,7 @@ function Board(props) {
               </h1>
             ) : (
               <h1>
-                OOPS, FAILED{" "}
+                OOPS... FAILED{" "}
                 <span className="emoji" role="img" aria-label="Slightly Sad">
                   🙁
                 </span>

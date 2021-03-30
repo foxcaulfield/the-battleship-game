@@ -19,7 +19,7 @@ function Header(props) {
       </div>
       <div className={styles.mainHeader}>
         <InfoButton handleClose={togglePopup} />
-        <span className={styles.headerText}>The Battleship Game v.0.7.0</span>
+        <span className={styles.headerText}>The Battleship Game v.0.7.1</span>
         <ThemeButton changeTheme={props.toggleTheme} />
       </div>
     </>
