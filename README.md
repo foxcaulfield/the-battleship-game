@@ -1,6 +1,6 @@
 # ⚓ The Battleship Game ⚓
 
-You can use this [demo](https://foxcaulfield.github.io/the-battleship-game/)
+Press [here](https://foxcaulfield.github.io/the-battleship-game/) to play this game
 
 This application is based on React library with using:
 
