@@ -18,4 +18,4 @@ This application is based on React library with using:
 - You can change theme by pressing **Theme** button 🎨
 - To read extended rules push **Rules** button 📖
 
-![Preview](./screenshots/screenshot1.png)
+![](./screenshots/screenshot1.png)
